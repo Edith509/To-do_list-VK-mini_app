@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #00CED1, #9400D3);
+}
+
+.todo_app {
+    width: 90%;
+    max-width: 540px;
+    background: #fff;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.todo_app h2 {
+    color: #002765;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 2em; /* Using relative units */
+    margin-bottom: 20px;
+}
+
+.todo_app h2 img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 1em; /* Using relative units */
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: linear-gradient(135deg, #00CED1, #9400D3);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 40px;
+    font-weight: 400;
+    font-size: 1em; /* Using relative units */
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #9400D3, #00CED1);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    padding: 12px 8px;
+    user-select: none;
+    font-weight: 400;
+    font-size: 1em; /* Using relative units */
+    position: relative;
+    word-wrap: break-word; /* Добавьте это свойство */
+    word-break: break-word; /* Добавьте это свойство */
+    max-width: 100%; /* Убедитесь, что элемент не вылазит за пределы */
+}
+
+ul li::before {
+    content: '';
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(../images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    margin-right: 10px;
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(../images/checked.png);
+}
+
+ul li span {
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em; /* Using relative units */
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+ul li span:hover {
+    background: #edeef0;
+}
+
+@media (max-width: 768px) {
+    .todo_app {
+        padding: 20px 15px 35px;
+    }
+
+    .todo_app h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .row {
+        padding: 8px 15px;
+    }
+
+    button {
+        padding: 12px 30px;
+        font-size: 0.9em;
+    }
+
+    ul li {
+        font-size: 0.7em;
+        padding: 10px 8px;
+        font-family: "Montserrat";
+
+    }
+
+    ul li::before {
+        height: 24px;
+        width: 24px;
+    }
+
+    ul li span {
+        width: 30px;
+        height: 30px;
+        font-size: 1em;
+        line-height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .todo_app {
+        padding: 15px 10px 30px;
+    }
+
+    .todo_app h2 {
+        font-size: 1.6em;
+        margin-bottom: 10px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 5px 10px;
+    }
+
+    input {
+        padding: 8px;
+        font-size: 0.8em;
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.8em;
+        align-self: center;
+    }
+
+    ul li {
+        font-size: 0.8em;
+        padding: 8px 5px;
+    }
+
+    ul li::before {
+        height: 20px;
+        width: 20px;
+    }
+
+    ul li span {
+        width: 25px;
+        height: 25px;
+        font-size: 0.9em;
+        line-height: 25px;
+    }
+}
